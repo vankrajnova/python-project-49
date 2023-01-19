@@ -1,8 +1,19 @@
 ### Hexlet tests and linter status:
+
 [![Actions Status](https://github.com/vankrajnova/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/vankrajnova/python-project-49/actions)
+
+#### Maintainability:
 
 [maintainability](https://codeclimate.com/github/vankrajnova/python-project-49/maintainability)
 
+#### Asciinema brain-even:
+
 [asciinema brain-even](https://asciinema.org/a/qLVBNjOn4Iw9yvZpITHo0CvXO)
 
+#### Asciinema brain-calc:
+
 [asciinema brain-calc](https://asciinema.org/a/04r8C0hmsbdOk29IIjVzOBwDI)
+
+#### Asciinema brain-gcd:
+
+[asciinema brain-gcd](https://asciinema.org/a/kWhwnurdXaTfaWXcmm1kv50nS)

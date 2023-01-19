@@ -1,3 +1,4 @@
+import math
 import random
 from operator import add, sub, mul
 
@@ -55,6 +56,32 @@ def calculator(user_name: str):
             show_correct_answer_message()
         else:
             show_error_message(result, answer, user_name)
+            break
+
+    if correct_count == 3:
+        show_win_message(user_name)
+
+
+def find_greatest_common_divisor(user_name: str):
+    print('Find the greatest common divisor of given numbers.')
+
+    correct_count = 0
+
+    while correct_count < 3:
+        random_values = random.choices(
+            [random.randint(0, 50), random.randint(0, 50)], k=2)
+
+        ask_question(value=f'{random_values[0]} {random_values[1]}')
+
+        correct_answer = math.gcd(random_values[0], random_values[1])
+
+        answer = get_answer()
+
+        if check_answer(int(answer), correct_answer):
+            correct_count += 1
+            show_correct_answer_message()
+        else:
+            show_error_message(correct_answer, answer, user_name)
             break
 
     if correct_count == 3:
