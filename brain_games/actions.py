@@ -25,8 +25,20 @@ def show_correct_answer_message():
     print('Correct!')
 
 
-def check_answer(answer, correct_answer):
-    return True if correct_answer == answer else False
+def check_answer(user_answer, correct_answer):
+    return True if correct_answer == user_answer else False
+
+
+def is_answer_correct(user_name, user_answer, correct_answer):
+    if user_answer == correct_answer:
+        show_correct_answer_message()
+        return True
+    else:
+        show_error_message(
+            correct_answer=correct_answer,
+            user_answer=user_answer,
+            user_name=user_name)
+        return False
 
 
 def create_arithmetic_progression():
@@ -54,3 +66,10 @@ def hide_element_in_list(list_of_elements: list):
     list_of_elements[random_index] = '..'
     hidden_list = ' '.join(list_of_elements)
     return correct_answer, hidden_list
+
+
+def is_prime(number):
+    for i in range(2, int(number // 2) + 1):
+        if number % i == 0:
+            return False
+    return True

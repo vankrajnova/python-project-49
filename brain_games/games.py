@@ -3,8 +3,8 @@ import random
 from operator import add, sub, mul
 
 from brain_games.actions import ask_question, get_answer, show_win_message, \
-    show_error_message, show_correct_answer_message, \
-    check_answer, create_arithmetic_progression, hide_element_in_list
+    create_arithmetic_progression, hide_element_in_list, \
+    is_prime, is_answer_correct
 
 
 def check_even_or_not(user_name: str):
@@ -19,11 +19,13 @@ def check_even_or_not(user_name: str):
 
         correct_answer = 'yes' if random_value % 2 == 0 else 'no'
 
-        if check_answer(answer, correct_answer):
+        if is_answer_correct(
+            correct_answer=correct_answer,
+            user_answer=answer,
+            user_name=user_name
+        ):
             correct_count += 1
-            show_correct_answer_message()
         else:
-            show_error_message(correct_answer, answer, user_name)
             break
 
     if correct_count == 3:
@@ -44,19 +46,21 @@ def calculator(user_name: str):
         )
 
         if random_operation[0] == '+':
-            result = add(random_values[0], random_values[1])
+            correct_answer = add(random_values[0], random_values[1])
         elif random_operation[0] == '-':
-            result = sub(random_values[0], random_values[1])
+            correct_answer = sub(random_values[0], random_values[1])
         else:
-            result = mul(random_values[0], random_values[1])
+            correct_answer = mul(random_values[0], random_values[1])
 
         answer = get_answer()
 
-        if check_answer(int(answer), result):
+        if is_answer_correct(
+            correct_answer=correct_answer,
+            user_answer=int(answer),
+            user_name=user_name
+        ):
             correct_count += 1
-            show_correct_answer_message()
         else:
-            show_error_message(result, answer, user_name)
             break
 
     if correct_count == 3:
@@ -78,11 +82,13 @@ def find_greatest_common_divisor(user_name: str):
 
         answer = get_answer()
 
-        if check_answer(int(answer), correct_answer):
+        if is_answer_correct(
+            correct_answer=correct_answer,
+            user_answer=int(answer),
+            user_name=user_name
+        ):
             correct_count += 1
-            show_correct_answer_message()
         else:
-            show_error_message(correct_answer, answer, user_name)
             break
 
     if correct_count == 3:
@@ -102,11 +108,39 @@ def progression(user_name: str):
         ask_question(value=f'{hidden_list}')
         answer = get_answer()
 
-        if check_answer(answer, hidden_element):
+        if is_answer_correct(
+            correct_answer=hidden_element,
+            user_answer=answer,
+            user_name=user_name
+        ):
             correct_count += 1
-            show_correct_answer_message()
         else:
-            show_error_message(hidden_element, answer, user_name)
+            break
+
+    if correct_count == 3:
+        show_win_message(user_name)
+
+
+def prime_number(user_name: str):
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+
+    correct_count = 0
+
+    while correct_count < 3:
+        number = random.randint(1, 100)
+        ask_question(value=f'{number}')
+
+        answer = get_answer()
+
+        correct_answer = 'yes' if is_prime(number) else 'no'
+
+        if is_answer_correct(
+            correct_answer=correct_answer,
+            user_answer=answer,
+            user_name=user_name
+        ):
+            correct_count += 1
+        else:
             break
 
     if correct_count == 3:
