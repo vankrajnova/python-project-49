@@ -3,7 +3,8 @@ import random
 from operator import add, sub, mul
 
 from brain_games.actions import ask_question, get_answer, show_win_message, \
-    show_error_message, show_correct_answer_message, check_answer
+    show_error_message, show_correct_answer_message, \
+    check_answer, create_arithmetic_progression, hide_element_in_list
 
 
 def check_even_or_not(user_name: str):
@@ -82,6 +83,30 @@ def find_greatest_common_divisor(user_name: str):
             show_correct_answer_message()
         else:
             show_error_message(correct_answer, answer, user_name)
+            break
+
+    if correct_count == 3:
+        show_win_message(user_name)
+
+
+def progression(user_name: str):
+    print('What number is missing in the progression?')
+
+    correct_count = 0
+
+    while correct_count < 3:
+        progression = create_arithmetic_progression()
+
+        hidden_element, hidden_list = hide_element_in_list(progression)
+
+        ask_question(value=f'{hidden_list}')
+        answer = get_answer()
+
+        if check_answer(answer, hidden_element):
+            correct_count += 1
+            show_correct_answer_message()
+        else:
+            show_error_message(hidden_element, answer, user_name)
             break
 
     if correct_count == 3:
