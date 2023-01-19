@@ -8,7 +8,7 @@ from brain_games.actions import ask_question, get_answer, show_win_message, \
 
 
 def check_even_or_not(user_name: str):
-    print('Answer "yes" if the number is even, otherwise answer "no".')
+    print('Answer "yes" if the number is even, otherwise answer "ц".')
 
     correct_count = 0
     while correct_count < 3:
