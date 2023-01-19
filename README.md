@@ -21,3 +21,7 @@
 #### Asciinema brain-progression:
 
 [asciinema brain-progression](https://asciinema.org/a/5kXf5p1waGba1P29IDnMTAVG0)
+
+#### Asciinema brain-prime:
+
+[asciinema brain-prime]( https://asciinema.org/a/e7Zf3MF2TRJh4KSBjoEHP8vj4)
