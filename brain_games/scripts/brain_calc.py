@@ -1,10 +1,10 @@
-from brain_games.cli import welcome_user
-from brain_games.games import calculator
+#!/usr/bin/env python3
+from brain_games.actions import play_game
+from brain_games.games import calc
 
 
 def main():
-    user_name = welcome_user()
-    calculator(user_name=user_name)
+    play_game(calc)
 
 
 if __name__ == '__main__':

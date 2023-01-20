@@ -1,10 +1,9 @@
-from brain_games.cli import welcome_user
-from brain_games.games import find_greatest_common_divisor
+from brain_games.actions import play_game
+from brain_games.games import find_gcd
 
 
 def main():
-    user_name = welcome_user()
-    find_greatest_common_divisor(user_name)
+    play_game(find_gcd)
 
 
 if __name__ == '__main__':

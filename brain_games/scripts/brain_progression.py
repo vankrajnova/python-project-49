@@ -1,10 +1,9 @@
-from brain_games.cli import welcome_user
+from brain_games.actions import play_game
 from brain_games.games import progression
 
 
 def main():
-    user_name = welcome_user()
-    progression(user_name)
+    play_game(progression)
 
 
 if __name__ == '__main__':
