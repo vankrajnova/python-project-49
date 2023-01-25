@@ -1,13 +1,9 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = "student project brain-games"
+description = ""
 authors = ["a.krainova <a.krainova@rt-solar.ru>"]
 readme = "README.md"
-repository = "https://github.com/vankrajnova/python-project-49"
-classifiers = [
-    "Programming Language :: Python :: 3",
-]
 packages = [{ include = "brain_games" }]
 
 [tool.poetry.dependencies]
