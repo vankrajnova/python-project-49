@@ -1,3 +1,6 @@
 # created by virtualenv automatically
 .venv
 _tests_example
+dist
+.idea
+__pycache
