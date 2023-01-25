@@ -4,7 +4,8 @@
 
 #### Maintainability:
 
-[maintainability](https://codeclimate.com/github/vankrajnova/python-project-49/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f5c752dee5a44dfa1254/maintainability)](https://codeclimate.com/github/vankrajnova/python-project-49/maintainability)
+
 
 #### Asciinema brain-even:
 
