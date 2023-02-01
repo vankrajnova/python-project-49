@@ -11,7 +11,6 @@ def create_progression():
     # случайная длина списка
     length = random.randint(7, 12)
 
-    # list_values = [str(min_value)]
     list_of_elements = list(range(start, (start + length * step), step))
 
     return list_of_elements
