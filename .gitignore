@@ -3,4 +3,4 @@
 _tests_example
 dist
 .idea
-__pycache
+.pytest_cache
