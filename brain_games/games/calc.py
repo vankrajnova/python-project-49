@@ -1,6 +1,5 @@
 import operator
 import random
-from operator import add, sub, mul
 
 
 RULE = 'What is the result of the expression?'
