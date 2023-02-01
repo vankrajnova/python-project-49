@@ -5,21 +5,16 @@ RULE = 'What number is missing in the progression?'
 
 def create_progression():
     # случайное минимальное число
-    min_value = random.randint(1, 20)
+    start = random.randint(1, 20)
     # случайное число для шага прогрессии
     step = random.randint(1, 10)
     # случайная длина списка
-    random_len = random.randint(7, 12)
+    length = random.randint(7, 12)
 
-    list_values = [str(min_value)]
+    # list_values = [str(min_value)]
+    list_of_elements = list(range(start, (start + length * step), step))
 
-    while random_len > 1:
-        value = min_value + step
-        list_values.append(str(value))
-        random_len -= 1
-        min_value += step
-
-    return list_values
+    return list_of_elements
 
 
 def hide_element_in_list(list_of_elements: list):
@@ -27,7 +22,7 @@ def hide_element_in_list(list_of_elements: list):
 
     hidden_element = list_of_elements[random_index]
     list_of_elements[random_index] = '..'
-    hidden_list = ' '.join(list_of_elements)
+    hidden_list = ' '.join(map(str, list_of_elements))
     return hidden_element, hidden_list
 
 

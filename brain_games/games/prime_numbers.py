@@ -4,10 +4,16 @@ RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def is_prime(number):
-    for i in range(2, int(number // 2) + 1):
-        if number % i == 0:
-            return False
-    return True
+    if number > 1:
+        for n in range(2, number):
+            if (number % n) == 0:
+                # is not a prime number
+                return False
+        # is a prime number
+        return True
+    else:
+        # is not a prime number
+        return False
 
 
 def get_game_content():
