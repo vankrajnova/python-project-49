@@ -17,7 +17,7 @@ def create_progression():
 
 
 def hide_element_in_list(list_of_elements: list):
-    random_index = random.randint(0, len(list_of_elements) - 1)
+    random_index = random.randrange(0, len(list_of_elements))
 
     hidden_element = list_of_elements[random_index]
     list_of_elements[random_index] = '..'
